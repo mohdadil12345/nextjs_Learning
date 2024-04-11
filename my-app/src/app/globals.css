@@ -2,3 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+.navbar {
+  background-color: tomato;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+}
+
+.detailsdata{
+  border: 1px solid rgb(183, 183, 183);
+  max-width: 200px;
+  margin: 30px auto;
+  padding: 20px;
+  border-radius: 4px;
+}

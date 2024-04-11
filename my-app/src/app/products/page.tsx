@@ -2,15 +2,26 @@ import Link from "next/link";
 
 
 
-export default function Products() {
+export default async function Products() {
+
+  const fetchData = await fetch("https://jsonplaceholder.typicode.com/posts")
+  const res = await fetchData.json()
+  console.log(res)
+
   return (
     <div>
         <h3 className="text-2xl">Products list Page</h3>
-        <ol className="list-decimal list-inside">
-        <li> <Link href="/products/prod">prod</Link></li>
-        <li> <Link href="/products/prod">prod</Link></li>
-        <li> <Link href="/products/prod">prod</Link></li>
-        <li> <Link href="/products/prod">prod</Link></li>
+        <ol>
+
+          {res.map((ele : any)=> (
+              <div className="items">
+                <p>
+                  <Link href={`products/${ele.id}`} >{ele.title}</Link>
+                </p>
+              </div>
+          ))}
+
+
       
       </ol>
 
